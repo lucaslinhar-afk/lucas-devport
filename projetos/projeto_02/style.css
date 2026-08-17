@@ -4,32 +4,188 @@
     box-sizing: border-box;
 }
 
-body{
-    position: relative;
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #312e81, transparent 40%),
+        linear-gradient(135deg, #020617, #0f172a);
+
+    color: white;
 }
 
+/* BOTÃO ABRIR */
+
+.btnAbrir {
+    padding: 14px 24px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+
+    transition: 0.25s ease;
+}
+
+.btnAbrir:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.45);
+
+    filter: brightness(1.1);
+}
+
+.btnAbrir:active {
+    transform: translateY(0);
+}
+
+/* FUNDO DO MODAL */
+
 .modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.479);
-    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+
     top: 0;
     left: 0;
+
     display: none;
-    align-items: center ;
+
+    align-items: center;
     justify-content: center;
+
+    background: rgba(2, 6, 23, 0.75);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
 }
+
+/* MODAL ATIVO */
 
 .modal.is-active {
     display: flex;
 }
 
+/* CONTAINER */
+
 .container {
-    background-color: blue;
-    width: 300px;
+    width: 380px;
+    max-width: 90%;
+
+    padding: 40px 35px;
+
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 40px;
+    align-items: center;
+
+    gap: 25px;
+
     text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.08);
+
+    animation: aparecer 0.3s ease;
+}
+
+/* TÍTULO */
+
+.container h1 {
+    font-size: 34px;
+
+    color: #f8fafc;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 20px rgba(139, 92, 246, 0.6);
+}
+
+/* BOTÃO FECHAR */
+
+.btnFechar {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #ef4444;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btnFechar:hover {
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(239, 68, 68, 0.35);
+}
+
+.btnFechar:active {
+    transform: translateY(0);
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 30px 25px;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
 }

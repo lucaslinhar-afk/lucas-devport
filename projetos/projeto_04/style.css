@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+h2 {
+    position: absolute;
+    top: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #f8fafc;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.senha {
+    display: flex;
+    gap: 12px;
+    margin: 20px;
+}
+
+.digito {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    background-color: #020617;
+    font-size: 26px;
+    font-weight: bold;
+    transition: 0.25s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.digito:hover {
+    transform: translateY(-3px);
+    border-color: #64748b;
+}
+
+.certo {
+    background-color: #166534;
+    border-color: #22c55e;
+    color: #bbf7d0;
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.35);
+    transform: translateY(-3px);
+}
+
+.erro {
+    background-color: #991b1b;
+    border-color: #ef4444;
+    color: #fecaca;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
+    transform: translateY(-3px);
+}
+
+.inputSenha {
+    margin: 0 0 0 20px;
+    width: 180px;
+    height: 42px;
+    padding: 0 12px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    outline: none;
+    background-color: #020617;
+    color: white;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+.inputSenha::placeholder {
+    color: #64748b;
+}
+
+.inputSenha:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+
+.btnEnviar {
+    height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+.btnEnviar:hover {
+    background-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btnEnviar:active {
+    transform: translateY(0);
+}
